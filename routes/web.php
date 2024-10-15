@@ -1,5 +1,9 @@
 <?php
-use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'show'])->name('index');
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+
+Route::view('/', 'index');
+
+Route::get('/login', [AuthController::class, 'show']);
+Route::get('/register', [AuthController::class, 'register']);
