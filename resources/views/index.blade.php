@@ -13,8 +13,8 @@
         <div class="flex items-center justify-between">
             <a href="#" class="text-2xl font-bold text-gray-800 flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-</svg>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
                 HitniHIT
             </a>
             <nav class="hidden lg:flex space-x-8">
@@ -32,13 +32,13 @@
                 </a>
             </nav>
             <div class="hidden lg:flex space-x-4">
-                <a href="#" class="px-6 py-2 text-sm font-semibold bg-gray-100 text-gray-500 rounded-md hover:bg-gray-200 flex items-center">
+                <a href="/register" class="px-6 py-2 text-sm font-semibold bg-gray-100 text-gray-500 rounded-md hover:bg-gray-200 flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 21v-2a4 4 0 00-8 0v2m8-10a4 4 0 01-8 0 4 4 0 018 0z" />
                     </svg>
                     Registrace
                 </a>
-                <a href="#" class="px-6 py-2 text-sm font-semibold bg-indigo-500 text-white rounded-md hover:bg-indigo-600">Přihlášení
+                <a href="/login" class="px-6 py-2 text-sm font-semibold bg-indigo-500 text-white rounded-md hover:bg-indigo-600">Přihlášení
                 </a>
             </div>
             <button class="lg:hidden text-gray-500 focus:outline-none">
@@ -82,23 +82,23 @@
             </h3>
             <ul class="list-disc text-left mx-auto max-w-xl text-gray-600">
                 <li class="mb-2 flex items-center">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-    </svg>
-    Sledování každodenního příjmu potravin a histaminu.
-</li>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Sledování každodenního příjmu potravin a histaminu.
+                </li>
                 <li class="mb-2 flex items-center">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-    </svg>
-    Sledování každodenního příjmu potravin a histaminu.
-</li>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Snadné vyhodnocení, zda vaše strava překračuje povolené limity histaminu.
+                </li>
                 <li class="mb-2 flex items-center">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-    </svg>
-    Sledování každodenního příjmu potravin a histaminu.
-</li>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Poskytuje vám doporučení, jak lépe spravovat svůj jídelníček, abyste se vyhnuli histaminovým reakcím.
+                </li>
                 <li class="flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
