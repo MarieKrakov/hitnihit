@@ -19,7 +19,7 @@
             </a>
         </div>
         <nav class="hidden md:flex space-x-8">
-            <a href="/login" class="text-lg font-semibold text-gray-600 hover:text-indigo-500">Přihlášení</a>
+            <a href="{{ route('login') }}" class="text-lg font-semibold text-gray-600 hover:text-indigo-500">Přihlášení</a>
         </nav>
     </header>
 
@@ -28,26 +28,45 @@
         <!-- Registrace -->
         <div class="bg-indigo-100 w-full px-12 py-16 rounded-xl shadow-lg flex flex-col justify-center">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Registrace</h2>
-            <form action="/register" method="POST" class="w-full max-w-sm mx-auto space-y-6">
-                <div>
-                    <label for="name" class="block text-sm font-semibold text-gray-800 mb-2">Jméno</label>
-                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
-                </div>
-                <div>
-                    <label for="email" class="block text-sm font-semibold text-gray-800 mb-2">Email</label>
-                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
-                </div>
-                <div>
-                    <label for="password" class="block text-sm font-semibold text-gray-800 mb-2">Heslo</label>
-                    <input type="password" id="password" name="password" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
-                </div>
-                <div>
-                    <label for="password" class="block text-sm font-semibold text-gray-800 mb-2">Potvrzení hesla</label>
-                    <input type="password" id="password" name="password" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
-                </div>
-                <button type="submit" class="w-full py-3 text-lg font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Registrovat se</button>
-            </form>
-            <p class="mt-4 text-center text-sm text-gray-600">Již máte účet? <a href="/login" class="font-semibold text-indigo-600 hover:text-indigo-700">Přihlaste se zde</a></p>
+            @if ($errors->any())
+    <div class="bg-red-500 text-white p-4 rounded-lg mb-6">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+            <form action="{{ route('register.store') }}" method="POST" class="w-full max-w-sm mx-auto space-y-6">
+    @csrf <!-- Přidání CSRF tokenu -->
+
+    <!-- Jméno -->
+    <div>
+        <label for="name" class="block text-sm font-semibold text-gray-800 mb-2">Jméno</label>
+        <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+    </div>
+
+    <!-- Email -->
+    <div>
+        <label for="email" class="block text-sm font-semibold text-gray-800 mb-2">Email</label>
+        <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+    </div>
+
+    <!-- Heslo -->
+    <div>
+        <label for="password" class="block text-sm font-semibold text-gray-800 mb-2">Heslo</label>
+        <input type="password" id="password" name="password" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+    </div>
+
+    <!-- Potvrzení hesla -->
+    <div>
+        <label for="password_confirmation" class="block text-sm font-semibold text-gray-800 mb-2">Potvrzení hesla</label>
+        <input type="password" id="password_confirmation" name="password_confirmation" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+    </div>
+
+    <button type="submit" class="w-full py-3 text-lg font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Registrovat se</button>
+</form>
+            <p class="mt-4 text-center text-sm text-gray-600">Již máte účet? <a href="{{ route('login') }}" class="font-semibold text-indigo-600 hover:text-indigo-700">Přihlaste se zde</a></p>
         </div>
     </section>
 
