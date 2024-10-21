@@ -63,10 +63,10 @@
         </div>
     </section>
 
-    <!-- Odsazení před popisem -->
+    <!-- Odsazení-->
     <div class="h-3"></div>
 
-    <!-- Popis aplikace -->
+    <!-- Popis appky -->
     <section class="bg-gray py-11">
         <div class="max-w-4xl mx-auto text-center px-6">
             <h2 class="text-3xl font-bold text-gray-800 mb-6">Jak aplikace HitniHIT funguje?</h2>
@@ -109,7 +109,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Patička -->
     <footer class="bg-white py-6 mt-12">
         <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
             <div class="flex items-center">

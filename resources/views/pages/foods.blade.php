@@ -7,20 +7,17 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gray-50">
-    <!-- Header -->
     <header class="max-w-7xl mx-auto px-4 py-6 flex items-center justify-between">
-        <h1 class="text-2xl font-bold">HitniHIT - Seznam potravin</h1>
-        <nav>
-            <form action="{{ route('logout') }}" method="POST">
-                @csrf
-                <button type="submit" class="text-sm font-semibold text-indigo-500 hover:text-indigo-600">
-                    Odhlásit se
-                </button>
-            </form>
-        </nav>
-    </header>
-
-    <!-- Seznam potravin a formulář pro přidání -->
+    <h1 class="text-2xl font-bold">HitniHIT - Foods</h1>
+    <nav>
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="text-sm font-semibold text-indigo-500 hover:text-indigo-600">
+                Odhlásit se
+            </button>
+        </form>
+    </nav>
+</header>
     <section class="max-w-6xl mx-auto mt-16 px-8">
         @if (session('status'))
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
@@ -55,8 +52,6 @@
                 @endforeach
             </tbody>
         </table>
-
-        <!-- Formulář pro přidání nové potraviny -->
         <div class="mt-12">
             <h3 class="text-2xl font-bold text-gray-800 mb-4">Přidat novou potravinu</h3>
             <form action="{{ route('foods.store') }}" method="POST" class="w-full max-w-md space-y-6">

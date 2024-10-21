@@ -8,7 +8,6 @@
 </head>
 <body class="bg-gray-50">
 
-    <!-- Header -->
     <header class="max-w-7xl mx-auto px-4 py-6 flex items-center justify-between">
         <div class="flex items-center">
             <a href="/" class="text-2xl font-bold text-gray-800 flex items-center">
@@ -29,14 +28,13 @@
         <div id="login-section" class="bg-gray-50 w-full max-w-md px-12 py-16 rounded-xl shadow-lg flex flex-col justify-center">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Přihlášení</h2>
             
-            <!-- Úspěšné odhlášení zprávy -->
             @if (session('status'))
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
                     {{ session('status') }}
                 </div>
             @endif
 
-            <!-- Chybové zprávy -->
+            <!-- Chybky přihlášením -->
             @if ($errors->any())
                 <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
                     <ul>

@@ -7,8 +7,6 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gray-50">
-
-    <!-- Header -->
     <header class="max-w-7xl mx-auto px-4 py-6 flex items-center justify-between">
         <div class="flex items-center">
             <a href="/" class="text-2xl font-bold text-gray-800 flex items-center">
@@ -23,7 +21,6 @@
         </nav>
     </header>
 
-    <!-- Sekce registrace -->
     <section class="max-w-6xl mx-auto mt-16 flex flex-col md:flex-row gap-12">
         <!-- Registrace -->
         <div class="bg-indigo-100 w-full px-12 py-16 rounded-xl shadow-lg flex flex-col justify-center">
@@ -41,7 +38,7 @@
             @endif
 
             <form action="{{ route('register.store') }}" method="POST" class="w-full max-w-sm mx-auto space-y-6">
-                @csrf <!-- Přidání CSRF tokenu -->
+                @csrf
 
                 <!-- Jméno -->
                 <div>

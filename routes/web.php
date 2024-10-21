@@ -6,8 +6,8 @@ use App\Http\Controllers\FoodController;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/foods', [FoodController::class, 'foods'])->name('foods');
-    Route::post('/foods', [FoodController::class, 'store'])->name('foods.store'); // Přidání nové potraviny
-    Route::delete('/foods/{food}', [FoodController::class, 'destroy'])->name('foods.destroy'); // Odstranění potraviny
+    Route::post('/foods', [FoodController::class, 'store'])->name('foods.store'); 
+    Route::delete('/foods/{food}', [FoodController::class, 'destroy'])->name('foods.destroy');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout'); 
 });
 
