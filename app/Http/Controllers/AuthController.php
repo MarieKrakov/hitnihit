@@ -17,15 +17,25 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
             return redirect()->intended('/foods');
         }
 
         return back()->withErrors([
-            'email' => 'Přihlašovací údaje nejsou správné.',
-        ]);
+            'email' => 'Přihlašovací údaje nejsou správné. Zkontrolujte svůj email nebo heslo.',
+        ])->withInput();
     }
 
     public function register()
@@ -51,8 +61,16 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        Auth::login($user);
+        return redirect()->route('login')->with('status', 'Registrace proběhla úspěšně. Nyní se můžete přihlásit.');
+    }
 
-        return redirect('/foods');
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login')->with('status', 'Odhlášeno. Díky, že používáš HitniHIT.');
     }
 }

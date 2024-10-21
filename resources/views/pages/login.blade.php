@@ -25,28 +25,42 @@
     </header>
 
     <!-- Login sekce -->
-<section class="max-w-6xl mx-auto mt-16 flex justify-center">
-    <div id="login-section" class="bg-gray-50 w-full max-w-md px-12 py-16 rounded-xl shadow-lg flex flex-col justify-center">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Přihlášení</h2>
-        <form action="/login" method="POST" class="w-full space-y-6">
-        @csrf
-            <div>
-                <label for="email" class="block text-sm font-semibold text-gray-800 mb-2">Email</label>
-                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
-            </div>
-            <div>
-                <label for="password" class="block text-sm font-semibold text-gray-800 mb-2">Heslo</label>
-                <input type="password" id="password" name="password" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
-            </div>
-            <button type="submit" class="w-full py-3 text-lg font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Přihlásit se</button>
-        </form>
-        <p class="mt-4 text-center text-sm text-gray-600">Ještě nemáte účet? <a href="/register" class="font-semibold text-indigo-600 hover:text-indigo-700">Zaregistrujte se</a></p>
-    </div>
-</section>
+    <section class="max-w-6xl mx-auto mt-16 flex justify-center">
+        <div id="login-section" class="bg-gray-50 w-full max-w-md px-12 py-16 rounded-xl shadow-lg flex flex-col justify-center">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Přihlášení</h2>
+            
+            <!-- Úspěšné odhlášení zprávy -->
+            @if (session('status'))
+                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
+                    {{ session('status') }}
+                </div>
+            @endif
 
+            <!-- Chybové zprávy -->
+            @if ($errors->any())
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
-
-    
-
+            <form action="/login" method="POST" class="w-full space-y-6">
+                @csrf
+                <div>
+                    <label for="email" class="block text-sm font-semibold text-gray-800 mb-2">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-semibold text-gray-800 mb-2">Heslo</label>
+                    <input type="password" id="password" name="password" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+                </div>
+                <button type="submit" class="w-full py-3 text-lg font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Přihlásit se</button>
+            </form>
+            <p class="mt-4 text-center text-sm text-gray-600">Ještě nemáte účet? <a href="/register" class="font-semibold text-indigo-600 hover:text-indigo-700">Zaregistrujte se</a></p>
+        </div>
+    </section>
 </body>
 </html>
