@@ -24,7 +24,7 @@
                 {{ session('status') }}
             </div>
         @endif
-
+<!-- Tabulka s existujícími potravinami -->
         <h2 class="text-3xl font-bold text-gray-800 mb-8">Seznam potravin</h2>
         <table class="min-w-full bg-white shadow-md rounded-lg">
             <thead>
@@ -52,6 +52,7 @@
                 @endforeach
             </tbody>
         </table>
+         <!-- Formulář pro přidání nové potraviny -->
         <div class="mt-12">
             <h3 class="text-2xl font-bold text-gray-800 mb-4">Přidat novou potravinu</h3>
             <form action="{{ route('foods.store') }}" method="POST" class="w-full max-w-md space-y-6">
