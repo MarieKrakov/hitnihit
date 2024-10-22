@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Notifications\Notifiable; // na notifikace
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class User extends Authenticatable
@@ -21,7 +21,7 @@ class User extends Authenticatable
         'password',
     ];
 
-    public function foods()
+    public function foods() //vztah mezi user a foods
     {
         return $this->hasMany(Food::class);
     }
