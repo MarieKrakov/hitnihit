@@ -9,7 +9,7 @@ class FoodController extends Controller
 {
     public function foods()
     {
-        // Získání potravin, které jsou buď předdefinované (user_id null) nebo vytvořené přihlášeným uživatelem
+        // Získání potravin, které jsou buď předdefinované (user_id musí být null) nebo vytvořené přihlášeným uživatelem
         $foods = Food::whereNull('user_id')->orWhere('user_id', Auth::id())->get();
         return view('pages.foods', ['foods' => $foods]);
     }
